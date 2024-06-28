@@ -23,8 +23,8 @@ Nicolás Almaraz
 | |-- myapp_leds.h
 | |-- myapp_leds.c
 |-- main_controller
-|-- myapp_main_controller.h
-|-- myapp_main_controller.c
+| |-- myapp_main_controller.h
+| |-- myapp_main_controller.c
 ```
 
 ## Documentación
