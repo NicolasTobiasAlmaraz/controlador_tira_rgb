@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controlador Tira Leds RGB: Referencia del archivo myapp_uart.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Controlador Tira Leds RGB<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Controlador Leds RGB con UART y pulsadores</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo myapp_uart.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementaciones de la API de comunicación UART.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;mbed.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="myapp__leds_8h_source.html">myapp_leds.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="myapp__uart_8h_source.html">myapp_uart.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:af43f07d51887017f947ca77b7eeb3708" id="r_af43f07d51887017f947ca77b7eeb3708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af43f07d51887017f947ca77b7eeb3708">uartApi_init</a> ()</td></tr>
+<tr class="memdesc:af43f07d51887017f947ca77b7eeb3708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa la UART con la configuración de los "defines" de la API.  <br /></td></tr>
+<tr class="separator:af43f07d51887017f947ca77b7eeb3708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230f18443a90b8403d1d72418038abd5" id="r_a230f18443a90b8403d1d72418038abd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmsg__uart__t.html">msg_uart_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a230f18443a90b8403d1d72418038abd5">uartApi_mde_recepcion</a> ()</td></tr>
+<tr class="memdesc:a230f18443a90b8403d1d72418038abd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpreta los mensajes recibidos por UART.  <br /></td></tr>
+<tr class="separator:a230f18443a90b8403d1d72418038abd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a56144013f17dabf142e484d86d78a" id="r_af1a56144013f17dabf142e484d86d78a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a56144013f17dabf142e484d86d78a">uartApi_sendConfig</a> (<a class="el" href="structrgb__color__t.html">rgb_color_t</a> color)</td></tr>
+<tr class="memdesc:af1a56144013f17dabf142e484d86d78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia la configuracion actual por uart.  <br /></td></tr>
+<tr class="separator:af1a56144013f17dabf142e484d86d78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6353a4b4872dd3bb31f174807b9f1dc3" id="r_a6353a4b4872dd3bb31f174807b9f1dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6353a4b4872dd3bb31f174807b9f1dc3">uartApi_sendUart</a> (const char *str)</td></tr>
+<tr class="memdesc:a6353a4b4872dd3bb31f174807b9f1dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia un mensaje por UART.  <br /></td></tr>
+<tr class="separator:a6353a4b4872dd3bb31f174807b9f1dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementaciones de la API de comunicación UART. </p>
+<dl class="section author"><dt>Autor</dt><dd>Nicolás Almaraz </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>rev 1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>28/06/2024 </dd></dl>
+</div><h2 class="groupheader">Documentación de funciones</h2>
+<a id="af43f07d51887017f947ca77b7eeb3708" name="af43f07d51887017f947ca77b7eeb3708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43f07d51887017f947ca77b7eeb3708">&#9670;&#160;</a></span>uartApi_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uartApi_init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa la UART con la configuración de los "defines" de la API. </p>
+
+</div>
+</div>
+<a id="a230f18443a90b8403d1d72418038abd5" name="a230f18443a90b8403d1d72418038abd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a230f18443a90b8403d1d72418038abd5">&#9670;&#160;</a></span>uartApi_mde_recepcion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmsg__uart__t.html">msg_uart_t</a> uartApi_mde_recepcion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpreta los mensajes recibidos por UART. </p>
+<dl class="section warning"><dt>Atención</dt><dd>Tener en cuenta que cuando se espera una palabra binaria, todo lo que sea distinto al caracter ASCII '1' será considerado como '0'. </dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Retorna</td><td>el comando recibido por UART </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af1a56144013f17dabf142e484d86d78a" name="af1a56144013f17dabf142e484d86d78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a56144013f17dabf142e484d86d78a">&#9670;&#160;</a></span>uartApi_sendConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uartApi_sendConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrgb__color__t.html">rgb_color_t</a></td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia la configuracion actual por uart. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>Configuración de leds a enviar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6353a4b4872dd3bb31f174807b9f1dc3" name="a6353a4b4872dd3bb31f174807b9f1dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6353a4b4872dd3bb31f174807b9f1dc3">&#9670;&#160;</a></span>uartApi_sendUart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uartApi_sendUart </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia un mensaje por UART. </p>
+<p>Envia un mensaje por Uart.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>String con el mensaje a enviar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

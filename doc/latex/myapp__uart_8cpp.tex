@@ -1,0 +1,103 @@
+\doxysection{Referencia del archivo myapp\+\_\+uart.\+cpp}
+\hypertarget{myapp__uart_8cpp}{}\label{myapp__uart_8cpp}\index{myapp\_uart.cpp@{myapp\_uart.cpp}}
+
+
+Implementaciones de la API de comunicación UART.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+leds.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+uart.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__uart_8cpp_af43f07d51887017f947ca77b7eeb3708}{uart\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa la UART con la configuración de los "{}defines"{} de la API. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmsg__uart__t}{msg\+\_\+uart\+\_\+t}} \mbox{\hyperlink{myapp__uart_8cpp_a230f18443a90b8403d1d72418038abd5}{uart\+Api\+\_\+mde\+\_\+recepcion}} ()
+\begin{DoxyCompactList}\small\item\em Interpreta los mensajes recibidos por UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__uart_8cpp_af1a56144013f17dabf142e484d86d78a}{uart\+Api\+\_\+send\+Config}} (\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Envia la configuracion actual por uart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__uart_8cpp_a6353a4b4872dd3bb31f174807b9f1dc3}{uart\+Api\+\_\+send\+Uart}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Envia un mensaje por UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementaciones de la API de comunicación UART. 
+
+\begin{DoxyAuthor}{Autor}
+Nicolás Almaraz 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+rev 1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+28/06/2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__uart_8cpp_af43f07d51887017f947ca77b7eeb3708}\index{myapp\_uart.cpp@{myapp\_uart.cpp}!uartApi\_init@{uartApi\_init}}
+\index{uartApi\_init@{uartApi\_init}!myapp\_uart.cpp@{myapp\_uart.cpp}}
+\doxysubsubsection{\texorpdfstring{uartApi\_init()}{uartApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__uart_8cpp_af43f07d51887017f947ca77b7eeb3708} 
+void uart\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la UART con la configuración de los "{}defines"{} de la API. 
+
+\Hypertarget{myapp__uart_8cpp_a230f18443a90b8403d1d72418038abd5}\index{myapp\_uart.cpp@{myapp\_uart.cpp}!uartApi\_mde\_recepcion@{uartApi\_mde\_recepcion}}
+\index{uartApi\_mde\_recepcion@{uartApi\_mde\_recepcion}!myapp\_uart.cpp@{myapp\_uart.cpp}}
+\doxysubsubsection{\texorpdfstring{uartApi\_mde\_recepcion()}{uartApi\_mde\_recepcion()}}
+{\footnotesize\ttfamily \label{myapp__uart_8cpp_a230f18443a90b8403d1d72418038abd5} 
+\mbox{\hyperlink{structmsg__uart__t}{msg\+\_\+uart\+\_\+t}} uart\+Api\+\_\+mde\+\_\+recepcion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Interpreta los mensajes recibidos por UART. 
+
+\begin{DoxyWarning}{Atención}
+Tener en cuenta que cuando se espera una palabra binaria, todo lo que sea distinto al caracter ASCII \textquotesingle{}1\textquotesingle{} será considerado como \textquotesingle{}0\textquotesingle{}. 
+\end{DoxyWarning}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Retorna} & el comando recibido por UART \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__uart_8cpp_af1a56144013f17dabf142e484d86d78a}\index{myapp\_uart.cpp@{myapp\_uart.cpp}!uartApi\_sendConfig@{uartApi\_sendConfig}}
+\index{uartApi\_sendConfig@{uartApi\_sendConfig}!myapp\_uart.cpp@{myapp\_uart.cpp}}
+\doxysubsubsection{\texorpdfstring{uartApi\_sendConfig()}{uartApi\_sendConfig()}}
+{\footnotesize\ttfamily \label{myapp__uart_8cpp_af1a56144013f17dabf142e484d86d78a} 
+void uart\+Api\+\_\+send\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Envia la configuracion actual por uart. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color} & Configuración de leds a enviar \\
+\hline
+\end{DoxyParams}
+\Hypertarget{myapp__uart_8cpp_a6353a4b4872dd3bb31f174807b9f1dc3}\index{myapp\_uart.cpp@{myapp\_uart.cpp}!uartApi\_sendUart@{uartApi\_sendUart}}
+\index{uartApi\_sendUart@{uartApi\_sendUart}!myapp\_uart.cpp@{myapp\_uart.cpp}}
+\doxysubsubsection{\texorpdfstring{uartApi\_sendUart()}{uartApi\_sendUart()}}
+{\footnotesize\ttfamily \label{myapp__uart_8cpp_a6353a4b4872dd3bb31f174807b9f1dc3} 
+void uart\+Api\+\_\+send\+Uart (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Envia un mensaje por UART. 
+
+Envia un mensaje por Uart.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & String con el mensaje a enviar \\
+\hline
+\end{DoxyParams}

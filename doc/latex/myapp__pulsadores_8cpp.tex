@@ -1,0 +1,62 @@
+\doxysection{Referencia del archivo myapp\+\_\+pulsadores.\+cpp}
+\hypertarget{myapp__pulsadores_8cpp}{}\label{myapp__pulsadores_8cpp}\index{myapp\_pulsadores.cpp@{myapp\_pulsadores.cpp}}
+
+
+Implementaciones de la API de pulsadores.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}myapp\+\_\+pulsadores.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+uart.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__pulsadores_8cpp_a6f8e64f6ba333ce2c2d83bdb7f6619cf}{pulsadores\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em \+: Inicializa a los GPIO de los pulsadores \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t}} \mbox{\hyperlink{myapp__pulsadores_8cpp_a4f4a3f361c24763d79c25a68f43d2bc1}{pulsadores\+Api\+\_\+get\+Pulsadores}} ()
+\begin{DoxyCompactList}\small\item\em \+: Retorna el valor de los pulsadores sin rebote ni glitches \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementaciones de la API de pulsadores. 
+
+\begin{DoxyAuthor}{Autor}
+Nicolás Almaraz 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+rev 1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+28/06/2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__pulsadores_8cpp_a4f4a3f361c24763d79c25a68f43d2bc1}\index{myapp\_pulsadores.cpp@{myapp\_pulsadores.cpp}!pulsadoresApi\_getPulsadores@{pulsadoresApi\_getPulsadores}}
+\index{pulsadoresApi\_getPulsadores@{pulsadoresApi\_getPulsadores}!myapp\_pulsadores.cpp@{myapp\_pulsadores.cpp}}
+\doxysubsubsection{\texorpdfstring{pulsadoresApi\_getPulsadores()}{pulsadoresApi\_getPulsadores()}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8cpp_a4f4a3f361c24763d79c25a68f43d2bc1} 
+\mbox{\hyperlink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t}} pulsadores\+Api\+\_\+get\+Pulsadores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\+: Retorna el valor de los pulsadores sin rebote ni glitches 
+
+\begin{DoxyWarning}{Atención}
+Bloquea TIEMPO\+\_\+\+ANTIRREBOTE\+\_\+\+MS ms para verificar transicion 
+\end{DoxyWarning}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em } & Valor de los pulsadores sin rebote ni glitches \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__pulsadores_8cpp_a6f8e64f6ba333ce2c2d83bdb7f6619cf}\index{myapp\_pulsadores.cpp@{myapp\_pulsadores.cpp}!pulsadoresApi\_init@{pulsadoresApi\_init}}
+\index{pulsadoresApi\_init@{pulsadoresApi\_init}!myapp\_pulsadores.cpp@{myapp\_pulsadores.cpp}}
+\doxysubsubsection{\texorpdfstring{pulsadoresApi\_init()}{pulsadoresApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8cpp_a6f8e64f6ba333ce2c2d83bdb7f6619cf} 
+void pulsadores\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\+: Inicializa a los GPIO de los pulsadores 
+

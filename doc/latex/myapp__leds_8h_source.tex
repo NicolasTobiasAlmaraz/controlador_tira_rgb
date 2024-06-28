@@ -1,0 +1,43 @@
+\doxysection{myapp\+\_\+leds.\+h}
+\hypertarget{myapp__leds_8h_source}{}\label{myapp__leds_8h_source}\mbox{\hyperlink{myapp__leds_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ MYAPP\_LEDS\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MYAPP\_LEDS\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ ====================\ Dependencias}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}mbed.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Defines\ de\ la\ API\ LEDs}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ GPIO\_LED\_RED\ D2\ \ \ \ \ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ GPIO\_LED\_GREEN\ D3\ \ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ GPIO\_LED\_BLUE\ D4\ \ \ \ }}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Estructuras\ de\ la\ API\ LEDs}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//TODO:\ Le\ puse\ uint8\_t\ para\ poder\ escalarse\ en\ el\ futuro\ a\ un\ PWM\ almacenando\ el\ duty\ de\ cada\ color}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrgb__color__t_ad47d918910aaa51c73160ac85999d09c}{red}};}
+\DoxyCodeLine{00044\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrgb__color__t_a90d21fa503b626c00cdc8d94863d5877}{green}};}
+\DoxyCodeLine{00045\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structrgb__color__t_a287b397e90d7b995c81ff54e741f96b2}{blue}};}
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{structrgb__color__t}{rgb\_color\_t}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ Funciones\ públicas\ de\ la\ API\ LEDs}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{myapp__leds_8h_af782e20b0a5960681064153837a6f3e1}{ledsApi\_init}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \mbox{\hyperlink{structrgb__color__t}{rgb\_color\_t}}\ \mbox{\hyperlink{myapp__leds_8h_ad65669ebe956830a8ac1c8a87a663d6c}{ledsApi\_getLedsConfig}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{myapp__leds_8h_afbed96dabdc0f6c1ed4b3c192fceb073}{ledsApi\_setLeds}}(\mbox{\hyperlink{structrgb__color__t}{rgb\_color\_t}}\ color);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

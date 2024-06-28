@@ -1,0 +1,185 @@
+\doxysection{Referencia del archivo myapp\+\_\+pulsadores.\+h}
+\hypertarget{myapp__pulsadores_8h}{}\label{myapp__pulsadores_8h}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+
+
+API de pulsadores.  
+
+
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+leds.\+h"{}}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Almacena los estados de los pulsadores. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structarg__mde__pulsadores__t}{arg\+\_\+mde\+\_\+pulsadores\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Almacena las variables necesarias para la mde de pulsadores que elimina rebote y glitches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_a1ec348fa7f748ad6042a02285f34a711}{TIEMPO\+\_\+\+ANTIRREBOTE\+\_\+\+MS}}~50
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_ad5cc6e57c8b2548619151375546625f4}{GPIO\+\_\+\+PULSADOR\+\_\+\+RED}}~D5
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_a8406b9f3fe63595ff47c3dc0774b9ae7}{GPIO\+\_\+\+PULSADOR\+\_\+\+GREEN}}~D6
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_a29e9681a19062dc49972291e710a1444}{GPIO\+\_\+\+PULSADOR\+\_\+\+BLUE}}~D7
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_a9449bece63b6fad66171b05bb696bf91}{RED\+\_\+\+RESISTOR\+\_\+\+MODE}}~Pull\+Down
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_aa14c2f34dde7b1a244e44a26657ed293}{GREEN\+\_\+\+RESISTOR\+\_\+\+MODE}}~Pull\+Down
+\item 
+\#define \mbox{\hyperlink{myapp__pulsadores_8h_a903420ba43f11625de19991d5e4cc4ec}{BLUE\+\_\+\+RESISTOR\+\_\+\+MODE}}~Pull\+Down
+\end{DoxyCompactItemize}
+\doxysubsubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{myapp__pulsadores_8h_a3003198a027c5c5f0b7f8333c14a17d8}{gpio\+\_\+read\+\_\+func\+\_\+t}}) ()
+\begin{DoxyCompactList}\small\item\em Tipo de dato de función que lee un gpio y retorna un bool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b}{estado\+\_\+mde\+\_\+pulsador\+\_\+t}} \{ \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1}{ESTABLE\+\_\+\+BAJO}} =0
+, \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635}{ESTABLE\+\_\+\+ALTO}}
+, \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6}{CHEQUEANDO\+\_\+\+TRANSICION}}
+ \}
+\begin{DoxyCompactList}\small\item\em Estados de la MdE de pulsadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__pulsadores_8h_a6f8e64f6ba333ce2c2d83bdb7f6619cf}{pulsadores\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em \+: Inicializa a los GPIO de los pulsadores \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t}} \mbox{\hyperlink{myapp__pulsadores_8h_a4f4a3f361c24763d79c25a68f43d2bc1}{pulsadores\+Api\+\_\+get\+Pulsadores}} ()
+\begin{DoxyCompactList}\small\item\em \+: Retorna el valor de los pulsadores sin rebote ni glitches \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+API de pulsadores. 
+
+\begin{DoxyAuthor}{Autor}
+Nicolás Almaraz 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+rev 1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+28/06/2024
+\end{DoxyDate}
+Esta API se encarga de leer los tres pulsadores eliminando los rebotes y glitches de cada uno de ellos. Para ello cuenta con una función de "{}lectura validada"{}\+: \doxylink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t} \doxylink{myapp__pulsadores_8h_a4f4a3f361c24763d79c25a68f43d2bc1}{pulsadores\+Api\+\_\+get\+Pulsadores()};
+
+Cabe destacar que por hardware los pulsadores en estado IDLE hacen que la placa reciba 0V y cuando son presionados 3.\+3V 
+
+\doxysubsection{Documentación de «define»}
+\Hypertarget{myapp__pulsadores_8h_a903420ba43f11625de19991d5e4cc4ec}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!BLUE\_RESISTOR\_MODE@{BLUE\_RESISTOR\_MODE}}
+\index{BLUE\_RESISTOR\_MODE@{BLUE\_RESISTOR\_MODE}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{BLUE\_RESISTOR\_MODE}{BLUE\_RESISTOR\_MODE}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a903420ba43f11625de19991d5e4cc4ec} 
+\#define BLUE\+\_\+\+RESISTOR\+\_\+\+MODE~Pull\+Down}
+
+\Hypertarget{myapp__pulsadores_8h_a29e9681a19062dc49972291e710a1444}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!GPIO\_PULSADOR\_BLUE@{GPIO\_PULSADOR\_BLUE}}
+\index{GPIO\_PULSADOR\_BLUE@{GPIO\_PULSADOR\_BLUE}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_PULSADOR\_BLUE}{GPIO\_PULSADOR\_BLUE}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a29e9681a19062dc49972291e710a1444} 
+\#define GPIO\+\_\+\+PULSADOR\+\_\+\+BLUE~D7}
+
+\Hypertarget{myapp__pulsadores_8h_a8406b9f3fe63595ff47c3dc0774b9ae7}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!GPIO\_PULSADOR\_GREEN@{GPIO\_PULSADOR\_GREEN}}
+\index{GPIO\_PULSADOR\_GREEN@{GPIO\_PULSADOR\_GREEN}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_PULSADOR\_GREEN}{GPIO\_PULSADOR\_GREEN}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a8406b9f3fe63595ff47c3dc0774b9ae7} 
+\#define GPIO\+\_\+\+PULSADOR\+\_\+\+GREEN~D6}
+
+\Hypertarget{myapp__pulsadores_8h_ad5cc6e57c8b2548619151375546625f4}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!GPIO\_PULSADOR\_RED@{GPIO\_PULSADOR\_RED}}
+\index{GPIO\_PULSADOR\_RED@{GPIO\_PULSADOR\_RED}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_PULSADOR\_RED}{GPIO\_PULSADOR\_RED}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_ad5cc6e57c8b2548619151375546625f4} 
+\#define GPIO\+\_\+\+PULSADOR\+\_\+\+RED~D5}
+
+\Hypertarget{myapp__pulsadores_8h_aa14c2f34dde7b1a244e44a26657ed293}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!GREEN\_RESISTOR\_MODE@{GREEN\_RESISTOR\_MODE}}
+\index{GREEN\_RESISTOR\_MODE@{GREEN\_RESISTOR\_MODE}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{GREEN\_RESISTOR\_MODE}{GREEN\_RESISTOR\_MODE}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_aa14c2f34dde7b1a244e44a26657ed293} 
+\#define GREEN\+\_\+\+RESISTOR\+\_\+\+MODE~Pull\+Down}
+
+\Hypertarget{myapp__pulsadores_8h_a9449bece63b6fad66171b05bb696bf91}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!RED\_RESISTOR\_MODE@{RED\_RESISTOR\_MODE}}
+\index{RED\_RESISTOR\_MODE@{RED\_RESISTOR\_MODE}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{RED\_RESISTOR\_MODE}{RED\_RESISTOR\_MODE}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a9449bece63b6fad66171b05bb696bf91} 
+\#define RED\+\_\+\+RESISTOR\+\_\+\+MODE~Pull\+Down}
+
+\Hypertarget{myapp__pulsadores_8h_a1ec348fa7f748ad6042a02285f34a711}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!TIEMPO\_ANTIRREBOTE\_MS@{TIEMPO\_ANTIRREBOTE\_MS}}
+\index{TIEMPO\_ANTIRREBOTE\_MS@{TIEMPO\_ANTIRREBOTE\_MS}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{TIEMPO\_ANTIRREBOTE\_MS}{TIEMPO\_ANTIRREBOTE\_MS}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a1ec348fa7f748ad6042a02285f34a711} 
+\#define TIEMPO\+\_\+\+ANTIRREBOTE\+\_\+\+MS~50}
+
+
+
+\doxysubsection{Documentación de «typedef»}
+\Hypertarget{myapp__pulsadores_8h_a3003198a027c5c5f0b7f8333c14a17d8}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!gpio\_read\_func\_t@{gpio\_read\_func\_t}}
+\index{gpio\_read\_func\_t@{gpio\_read\_func\_t}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_read\_func\_t}{gpio\_read\_func\_t}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a3003198a027c5c5f0b7f8333c14a17d8} 
+typedef bool(\texorpdfstring{$\ast$}{*} gpio\+\_\+read\+\_\+func\+\_\+t) ()}
+
+
+
+Tipo de dato de función que lee un gpio y retorna un bool. 
+
+
+
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!estado\_mde\_pulsador\_t@{estado\_mde\_pulsador\_t}}
+\index{estado\_mde\_pulsador\_t@{estado\_mde\_pulsador\_t}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{estado\_mde\_pulsador\_t}{estado\_mde\_pulsador\_t}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b} 
+enum \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b}{estado\+\_\+mde\+\_\+pulsador\+\_\+t}}}
+
+
+
+Estados de la MdE de pulsadores. 
+
+\begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTABLE\_BAJO@{ESTABLE\_BAJO}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!ESTABLE\_BAJO@{ESTABLE\_BAJO}}}\Hypertarget{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1}\label{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b} 
+ESTABLE\+\_\+\+BAJO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTABLE\_ALTO@{ESTABLE\_ALTO}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!ESTABLE\_ALTO@{ESTABLE\_ALTO}}}\Hypertarget{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635}\label{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b} 
+ESTABLE\+\_\+\+ALTO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHEQUEANDO\_TRANSICION@{CHEQUEANDO\_TRANSICION}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!CHEQUEANDO\_TRANSICION@{CHEQUEANDO\_TRANSICION}}}\Hypertarget{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6}\label{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b} 
+CHEQUEANDO\+\_\+\+TRANSICION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__pulsadores_8h_a4f4a3f361c24763d79c25a68f43d2bc1}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!pulsadoresApi\_getPulsadores@{pulsadoresApi\_getPulsadores}}
+\index{pulsadoresApi\_getPulsadores@{pulsadoresApi\_getPulsadores}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{pulsadoresApi\_getPulsadores()}{pulsadoresApi\_getPulsadores()}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a4f4a3f361c24763d79c25a68f43d2bc1} 
+\mbox{\hyperlink{structestado__pulsadores__t}{estado\+\_\+pulsadores\+\_\+t}} pulsadores\+Api\+\_\+get\+Pulsadores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\+: Retorna el valor de los pulsadores sin rebote ni glitches 
+
+\begin{DoxyWarning}{Atención}
+Bloquea TIEMPO\+\_\+\+ANTIRREBOTE\+\_\+\+MS ms para verificar transicion 
+\end{DoxyWarning}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em } & Valor de los pulsadores sin rebote ni glitches \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__pulsadores_8h_a6f8e64f6ba333ce2c2d83bdb7f6619cf}\index{myapp\_pulsadores.h@{myapp\_pulsadores.h}!pulsadoresApi\_init@{pulsadoresApi\_init}}
+\index{pulsadoresApi\_init@{pulsadoresApi\_init}!myapp\_pulsadores.h@{myapp\_pulsadores.h}}
+\doxysubsubsection{\texorpdfstring{pulsadoresApi\_init()}{pulsadoresApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__pulsadores_8h_a6f8e64f6ba333ce2c2d83bdb7f6619cf} 
+void pulsadores\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\+: Inicializa a los GPIO de los pulsadores 
+

@@ -1,0 +1,77 @@
+\doxysection{Referencia del archivo myapp\+\_\+leds.\+cpp}
+\hypertarget{myapp__leds_8cpp}{}\label{myapp__leds_8cpp}\index{myapp\_leds.cpp@{myapp\_leds.cpp}}
+
+
+Implementaciones de la API LEDs.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+leds.\+h"{}}\newline
+{\ttfamily \#include "{}myapp\+\_\+uart.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__leds_8cpp_afbed96dabdc0f6c1ed4b3c192fceb073}{leds\+Api\+\_\+set\+Leds}} (\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Setea un color rgb en los leds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} \mbox{\hyperlink{myapp__leds_8cpp_ad65669ebe956830a8ac1c8a87a663d6c}{leds\+Api\+\_\+get\+Leds\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la configuracion actual de los leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__leds_8cpp_af782e20b0a5960681064153837a6f3e1}{leds\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa GPIOs en color blanco. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementaciones de la API LEDs. 
+
+\begin{DoxyAuthor}{Autor}
+Nicolás Almaraz 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+rev 1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+28/06/2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__leds_8cpp_ad65669ebe956830a8ac1c8a87a663d6c}\index{myapp\_leds.cpp@{myapp\_leds.cpp}!ledsApi\_getLedsConfig@{ledsApi\_getLedsConfig}}
+\index{ledsApi\_getLedsConfig@{ledsApi\_getLedsConfig}!myapp\_leds.cpp@{myapp\_leds.cpp}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_getLedsConfig()}{ledsApi\_getLedsConfig()}}
+{\footnotesize\ttfamily \label{myapp__leds_8cpp_ad65669ebe956830a8ac1c8a87a663d6c} 
+\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} leds\+Api\+\_\+get\+Leds\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retorna la configuracion actual de los leds. 
+
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em configuracion} & actual de los leds \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__leds_8cpp_af782e20b0a5960681064153837a6f3e1}\index{myapp\_leds.cpp@{myapp\_leds.cpp}!ledsApi\_init@{ledsApi\_init}}
+\index{ledsApi\_init@{ledsApi\_init}!myapp\_leds.cpp@{myapp\_leds.cpp}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_init()}{ledsApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__leds_8cpp_af782e20b0a5960681064153837a6f3e1} 
+void leds\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa GPIOs en color blanco. 
+
+\Hypertarget{myapp__leds_8cpp_afbed96dabdc0f6c1ed4b3c192fceb073}\index{myapp\_leds.cpp@{myapp\_leds.cpp}!ledsApi\_setLeds@{ledsApi\_setLeds}}
+\index{ledsApi\_setLeds@{ledsApi\_setLeds}!myapp\_leds.cpp@{myapp\_leds.cpp}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_setLeds()}{ledsApi\_setLeds()}}
+{\footnotesize\ttfamily \label{myapp__leds_8cpp_afbed96dabdc0f6c1ed4b3c192fceb073} 
+void leds\+Api\+\_\+set\+Leds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Setea un color rgb en los leds. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color} & Color a setear \\
+\hline
+\end{DoxyParams}

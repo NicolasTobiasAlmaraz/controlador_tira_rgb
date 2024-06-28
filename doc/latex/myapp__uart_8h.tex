@@ -1,0 +1,268 @@
+\doxysection{Referencia del archivo myapp\+\_\+uart.\+h}
+\hypertarget{myapp__uart_8h}{}\label{myapp__uart_8h}\index{myapp\_uart.h@{myapp\_uart.h}}
+
+
+API que controla la comunicación UART.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include $<$Unbuffered\+Serial.\+h$>$}\newline
+{\ttfamily \#include "{}myapp\+\_\+leds.\+h"{}}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmsg__uart__t}{msg\+\_\+uart\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \+: Mensaje que se recibe por UART \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_a7c863ba4b7bef1cecda37762facd4d07}{GPIO\+\_\+\+UART\+\_\+\+TX}}~USBTX
+\begin{DoxyCompactList}\small\item\em GPIO del microcontrolador de Tx. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_ae428b840bfb6cce0c8efa29f090fcced}{GPIO\+\_\+\+UART\+\_\+\+RX}}~USBRX
+\begin{DoxyCompactList}\small\item\em GPIO del microcontrolador de Rx. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_a2c7ed0283bd6f2f9d791860d6254ef4f}{UART\+\_\+\+BAUDRATE}}~115200
+\begin{DoxyCompactList}\small\item\em Baudrate de 115200 bauds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_a3c8188748a929d23162ed997a51ee41f}{UART\+\_\+\+DATA\+\_\+\+SIZE}}~8
+\begin{DoxyCompactList}\small\item\em 8 bits de datos \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_ab932da02c44d07c0f8e8eb3d7b4f058e}{UART\+\_\+\+SERIAL\+\_\+\+BASE}}~Serial\+Base\+::\+None
+\begin{DoxyCompactList}\small\item\em Sin paridad. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__uart_8h_ab2dcf845824ee9eebc696a0de1f31688}{UART\+\_\+\+STOP\+\_\+\+BIT}}~1
+\begin{DoxyCompactList}\small\item\em 1 bit de stop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f}{request\+\_\+uart\+\_\+t}} \{ \mbox{\hyperlink{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1}{NO\+\_\+\+UART\+\_\+\+MSG}} =0
+, \mbox{\hyperlink{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64}{SET\+\_\+\+LEDS}}
+, \mbox{\hyperlink{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054}{GET\+\_\+\+CONFIG}}
+ \}
+\begin{DoxyCompactList}\small\item\em Posibles tipos de mensajes que pueden enviar por UART. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8}{estado\+\_\+mde\+\_\+uart\+\_\+t}} \{ \newline
+\mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0}{ESTADO\+\_\+\+IDLE}} =0
+, \mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9}{ESTADO\+\_\+\+NUM\+\_\+R}}
+, \mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962}{ESTADO\+\_\+\+NUM\+\_\+G}}
+, \mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4}{ESTADO\+\_\+\+NUM\+\_\+B}}
+, \newline
+\mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d}{ESTADO\+\_\+\+CHECK\+\_\+\+OK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Estados mde recepcion UART que interpretan solicitud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__uart_8h_af43f07d51887017f947ca77b7eeb3708}{uart\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa la UART con la configuración de los "{}defines"{} de la API. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmsg__uart__t}{msg\+\_\+uart\+\_\+t}} \mbox{\hyperlink{myapp__uart_8h_a230f18443a90b8403d1d72418038abd5}{uart\+Api\+\_\+mde\+\_\+recepcion}} ()
+\begin{DoxyCompactList}\small\item\em Interpreta los mensajes recibidos por UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__uart_8h_af1a56144013f17dabf142e484d86d78a}{uart\+Api\+\_\+send\+Config}} (\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Envia la configuracion actual por uart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__uart_8h_a6353a4b4872dd3bb31f174807b9f1dc3}{uart\+Api\+\_\+send\+Uart}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Envia un mensaje por Uart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+API que controla la comunicación UART. 
+
+\begin{DoxyAuthor}{Autor}
+Nicolás Almaraz 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+rev 1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+28/06/2024
+\end{DoxyDate}
+Esta API se encarga de proveer las funcionalidades de recepción de datos y escritura por UART. Para ello contamos con las funciones\+:
+\begin{DoxyItemize}
+\item mde\+\_\+msg\+\_\+t \doxylink{myapp__uart_8h_a230f18443a90b8403d1d72418038abd5}{uart\+Api\+\_\+mde\+\_\+recepcion()}\+: Interpreta los datos recibidos y retorna la solicitud interpretada
+\item void \doxylink{myapp__uart_8h_af1a56144013f17dabf142e484d86d78a}{uart\+Api\+\_\+send\+Config(rgb\+\_\+color\+\_\+t color)}\+: Envia la configuración de los leds indicada
+\item void \doxylink{myapp__uart_8h_a6353a4b4872dd3bb31f174807b9f1dc3}{uart\+Api\+\_\+send\+Uart(const char\texorpdfstring{$\ast$}{*} str)}\+: Envia mensaje de debug o reporte 
+\end{DoxyItemize}
+
+\doxysubsection{Documentación de «define»}
+\Hypertarget{myapp__uart_8h_ae428b840bfb6cce0c8efa29f090fcced}\index{myapp\_uart.h@{myapp\_uart.h}!GPIO\_UART\_RX@{GPIO\_UART\_RX}}
+\index{GPIO\_UART\_RX@{GPIO\_UART\_RX}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_UART\_RX}{GPIO\_UART\_RX}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_ae428b840bfb6cce0c8efa29f090fcced} 
+\#define GPIO\+\_\+\+UART\+\_\+\+RX~USBRX}
+
+
+
+GPIO del microcontrolador de Rx. 
+
+\Hypertarget{myapp__uart_8h_a7c863ba4b7bef1cecda37762facd4d07}\index{myapp\_uart.h@{myapp\_uart.h}!GPIO\_UART\_TX@{GPIO\_UART\_TX}}
+\index{GPIO\_UART\_TX@{GPIO\_UART\_TX}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_UART\_TX}{GPIO\_UART\_TX}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_a7c863ba4b7bef1cecda37762facd4d07} 
+\#define GPIO\+\_\+\+UART\+\_\+\+TX~USBTX}
+
+
+
+GPIO del microcontrolador de Tx. 
+
+\Hypertarget{myapp__uart_8h_a2c7ed0283bd6f2f9d791860d6254ef4f}\index{myapp\_uart.h@{myapp\_uart.h}!UART\_BAUDRATE@{UART\_BAUDRATE}}
+\index{UART\_BAUDRATE@{UART\_BAUDRATE}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_BAUDRATE}{UART\_BAUDRATE}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_a2c7ed0283bd6f2f9d791860d6254ef4f} 
+\#define UART\+\_\+\+BAUDRATE~115200}
+
+
+
+Baudrate de 115200 bauds. 
+
+\Hypertarget{myapp__uart_8h_a3c8188748a929d23162ed997a51ee41f}\index{myapp\_uart.h@{myapp\_uart.h}!UART\_DATA\_SIZE@{UART\_DATA\_SIZE}}
+\index{UART\_DATA\_SIZE@{UART\_DATA\_SIZE}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_DATA\_SIZE}{UART\_DATA\_SIZE}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_a3c8188748a929d23162ed997a51ee41f} 
+\#define UART\+\_\+\+DATA\+\_\+\+SIZE~8}
+
+
+
+8 bits de datos 
+
+\Hypertarget{myapp__uart_8h_ab932da02c44d07c0f8e8eb3d7b4f058e}\index{myapp\_uart.h@{myapp\_uart.h}!UART\_SERIAL\_BASE@{UART\_SERIAL\_BASE}}
+\index{UART\_SERIAL\_BASE@{UART\_SERIAL\_BASE}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_SERIAL\_BASE}{UART\_SERIAL\_BASE}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_ab932da02c44d07c0f8e8eb3d7b4f058e} 
+\#define UART\+\_\+\+SERIAL\+\_\+\+BASE~Serial\+Base\+::\+None}
+
+
+
+Sin paridad. 
+
+\Hypertarget{myapp__uart_8h_ab2dcf845824ee9eebc696a0de1f31688}\index{myapp\_uart.h@{myapp\_uart.h}!UART\_STOP\_BIT@{UART\_STOP\_BIT}}
+\index{UART\_STOP\_BIT@{UART\_STOP\_BIT}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{UART\_STOP\_BIT}{UART\_STOP\_BIT}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_ab2dcf845824ee9eebc696a0de1f31688} 
+\#define UART\+\_\+\+STOP\+\_\+\+BIT~1}
+
+
+
+1 bit de stop 
+
+
+
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8}\index{myapp\_uart.h@{myapp\_uart.h}!estado\_mde\_uart\_t@{estado\_mde\_uart\_t}}
+\index{estado\_mde\_uart\_t@{estado\_mde\_uart\_t}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{estado\_mde\_uart\_t}{estado\_mde\_uart\_t}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+enum \mbox{\hyperlink{myapp__uart_8h_af6b80d02584e653608952ed844b736c8}{estado\+\_\+mde\+\_\+uart\+\_\+t}}}
+
+
+
+Estados mde recepcion UART que interpretan solicitud. 
+
+\begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_IDLE@{ESTADO\_IDLE}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!ESTADO\_IDLE@{ESTADO\_IDLE}}}\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0}\label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+ESTADO\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_NUM\_R@{ESTADO\_NUM\_R}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!ESTADO\_NUM\_R@{ESTADO\_NUM\_R}}}\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9}\label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+ESTADO\+\_\+\+NUM\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_NUM\_G@{ESTADO\_NUM\_G}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!ESTADO\_NUM\_G@{ESTADO\_NUM\_G}}}\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962}\label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+ESTADO\+\_\+\+NUM\+\_\+G&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_NUM\_B@{ESTADO\_NUM\_B}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!ESTADO\_NUM\_B@{ESTADO\_NUM\_B}}}\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4}\label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+ESTADO\+\_\+\+NUM\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_CHECK\_OK@{ESTADO\_CHECK\_OK}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!ESTADO\_CHECK\_OK@{ESTADO\_CHECK\_OK}}}\Hypertarget{myapp__uart_8h_af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d}\label{myapp__uart_8h_af6b80d02584e653608952ed844b736c8} 
+ESTADO\+\_\+\+CHECK\+\_\+\+OK&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f}\index{myapp\_uart.h@{myapp\_uart.h}!request\_uart\_t@{request\_uart\_t}}
+\index{request\_uart\_t@{request\_uart\_t}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{request\_uart\_t}{request\_uart\_t}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f} 
+enum \mbox{\hyperlink{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f}{request\+\_\+uart\+\_\+t}}}
+
+
+
+Posibles tipos de mensajes que pueden enviar por UART. 
+
+\begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_UART\_MSG@{NO\_UART\_MSG}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!NO\_UART\_MSG@{NO\_UART\_MSG}}}\Hypertarget{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1}\label{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f} 
+NO\+\_\+\+UART\+\_\+\+MSG&No hay ningún mensaje. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SET\_LEDS@{SET\_LEDS}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!SET\_LEDS@{SET\_LEDS}}}\Hypertarget{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64}\label{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f} 
+SET\+\_\+\+LEDS&Hay que modificar los leds. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GET\_CONFIG@{GET\_CONFIG}!myapp\_uart.h@{myapp\_uart.h}}\index{myapp\_uart.h@{myapp\_uart.h}!GET\_CONFIG@{GET\_CONFIG}}}\Hypertarget{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054}\label{myapp__uart_8h_af8d05eb2f4ce962b6493557b4f49196f} 
+GET\+\_\+\+CONFIG&Pedido de configuracion. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__uart_8h_af43f07d51887017f947ca77b7eeb3708}\index{myapp\_uart.h@{myapp\_uart.h}!uartApi\_init@{uartApi\_init}}
+\index{uartApi\_init@{uartApi\_init}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{uartApi\_init()}{uartApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_af43f07d51887017f947ca77b7eeb3708} 
+void uart\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la UART con la configuración de los "{}defines"{} de la API. 
+
+\Hypertarget{myapp__uart_8h_a230f18443a90b8403d1d72418038abd5}\index{myapp\_uart.h@{myapp\_uart.h}!uartApi\_mde\_recepcion@{uartApi\_mde\_recepcion}}
+\index{uartApi\_mde\_recepcion@{uartApi\_mde\_recepcion}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{uartApi\_mde\_recepcion()}{uartApi\_mde\_recepcion()}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_a230f18443a90b8403d1d72418038abd5} 
+\mbox{\hyperlink{structmsg__uart__t}{msg\+\_\+uart\+\_\+t}} uart\+Api\+\_\+mde\+\_\+recepcion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Interpreta los mensajes recibidos por UART. 
+
+\begin{DoxyWarning}{Atención}
+Tener en cuenta que cuando se espera una palabra binaria, todo lo que sea distinto al caracter ASCII \textquotesingle{}1\textquotesingle{} será considerado como \textquotesingle{}0\textquotesingle{}. 
+\end{DoxyWarning}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Retorna} & el comando recibido por UART \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__uart_8h_af1a56144013f17dabf142e484d86d78a}\index{myapp\_uart.h@{myapp\_uart.h}!uartApi\_sendConfig@{uartApi\_sendConfig}}
+\index{uartApi\_sendConfig@{uartApi\_sendConfig}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{uartApi\_sendConfig()}{uartApi\_sendConfig()}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_af1a56144013f17dabf142e484d86d78a} 
+void uart\+Api\+\_\+send\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Envia la configuracion actual por uart. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color} & Configuración de leds a enviar \\
+\hline
+\end{DoxyParams}
+\Hypertarget{myapp__uart_8h_a6353a4b4872dd3bb31f174807b9f1dc3}\index{myapp\_uart.h@{myapp\_uart.h}!uartApi\_sendUart@{uartApi\_sendUart}}
+\index{uartApi\_sendUart@{uartApi\_sendUart}!myapp\_uart.h@{myapp\_uart.h}}
+\doxysubsubsection{\texorpdfstring{uartApi\_sendUart()}{uartApi\_sendUart()}}
+{\footnotesize\ttfamily \label{myapp__uart_8h_a6353a4b4872dd3bb31f174807b9f1dc3} 
+void uart\+Api\+\_\+send\+Uart (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Envia un mensaje por Uart. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & String a enviar\\
+\hline
+\end{DoxyParams}
+Envia un mensaje por Uart.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & String con el mensaje a enviar \\
+\hline
+\end{DoxyParams}

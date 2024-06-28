@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controlador Tira Leds RGB: Archivo de código fuente myapp_pulsadores.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Controlador Tira Leds RGB<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Controlador Leds RGB con UART y pulsadores</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">myapp_pulsadores.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="myapp__pulsadores_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef MYAPP_PULSADORES_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MYAPP_PULSADORES_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// ==================== Dependencias</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;mbed.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="myapp__leds_8h.html">myapp_leds.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Defines API Pulsadores</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a1ec348fa7f748ad6042a02285f34a711">   28</a></span><span class="preprocessor">#define TIEMPO_ANTIRREBOTE_MS 50        </span><span class="comment">//&lt; Tiempo de seguridad antirrebote y antiglithces</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#ad5cc6e57c8b2548619151375546625f4">   29</a></span><span class="preprocessor">#define GPIO_PULSADOR_RED D5            </span><span class="comment">//&lt; GPIO pulsador que controla led R</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a8406b9f3fe63595ff47c3dc0774b9ae7">   30</a></span><span class="preprocessor">#define GPIO_PULSADOR_GREEN D6          </span><span class="comment">//&lt; GPIO pulsador que controla led G</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a29e9681a19062dc49972291e710a1444">   31</a></span><span class="preprocessor">#define GPIO_PULSADOR_BLUE D7           </span><span class="comment">//&lt; GPIO pulsador que controla led B</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a9449bece63b6fad66171b05bb696bf91">   32</a></span><span class="preprocessor">#define RED_RESISTOR_MODE PullDown      </span><span class="comment">//&lt; Uso resistencia de Pull Down Interna </span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#aa14c2f34dde7b1a244e44a26657ed293">   33</a></span><span class="preprocessor">#define GREEN_RESISTOR_MODE PullDown    </span><span class="comment">//&lt; Uso resistencia de Pull Down Interna </span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a903420ba43f11625de19991d5e4cc4ec">   34</a></span><span class="preprocessor">#define BLUE_RESISTOR_MODE PullDown     </span><span class="comment">//&lt; Uso resistencia de Pull Down Interna </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Tipos de datos API Pulsadores</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35b">   43</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1">   44</a></span>    <a class="code hl_enumvalue" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1">ESTABLE_BAJO</a>=0,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635">   45</a></span>    <a class="code hl_enumvalue" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635">ESTABLE_ALTO</a>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6">   46</a></span>    <a class="code hl_enumvalue" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6">CHEQUEANDO_TRANSICION</a>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}<a class="code hl_enumeration" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35b">estado_mde_pulsador_t</a>;</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="myapp__pulsadores_8h.html#a3003198a027c5c5f0b7f8333c14a17d8">   52</a></span><span class="keyword">typedef</span> bool (*<a class="code hl_typedef" href="myapp__pulsadores_8h.html#a3003198a027c5c5f0b7f8333c14a17d8">gpio_read_func_t</a>)();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Estructuras de la API Pulsaores</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structestado__pulsadores__t.html">   61</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structestado__pulsadores__t.html#abaf9ed197759d781eafc794f995b8eeb">   62</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structestado__pulsadores__t.html#abaf9ed197759d781eafc794f995b8eeb">pulsador_red</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structestado__pulsadores__t.html#acee48336d8ac7ab06dfc8af1a4cfdf29">   63</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structestado__pulsadores__t.html#acee48336d8ac7ab06dfc8af1a4cfdf29">pulsador_green</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structestado__pulsadores__t.html#aed729490f986f044deeeb078a2cbf4b3">   64</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structestado__pulsadores__t.html#aed729490f986f044deeeb078a2cbf4b3">pulsador_blue</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>} <a class="code hl_struct" href="structestado__pulsadores__t.html">estado_pulsadores_t</a>;</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structarg__mde__pulsadores__t.html">   70</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structarg__mde__pulsadores__t.html#aedfddf58016a48dede6a6002ff7414ec">   71</a></span>    <a class="code hl_enumeration" href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35b">estado_mde_pulsador_t</a> <a class="code hl_variable" href="structarg__mde__pulsadores__t.html#aedfddf58016a48dede6a6002ff7414ec">estado</a>; <span class="comment">/*&lt; Estado de la mde*/</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structarg__mde__pulsadores__t.html#aea9eaa591acab97da5d1e9d62aa3cc54">   72</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structarg__mde__pulsadores__t.html#aea9eaa591acab97da5d1e9d62aa3cc54">mem_pulsador</a>;            <span class="comment">/*&lt; Ultimo estado estable del pulsador*/</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>} <a class="code hl_struct" href="structarg__mde__pulsadores__t.html">arg_mde_pulsadores_t</a>;</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// Funciones Públicas API Pulsadores</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__pulsadores_8h.html#a6f8e64f6ba333ce2c2d83bdb7f6619cf">pulsadoresApi_init</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><a class="code hl_struct" href="structestado__pulsadores__t.html">estado_pulsadores_t</a> <a class="code hl_function" href="myapp__pulsadores_8h.html#a4f4a3f361c24763d79c25a68f43d2bc1">pulsadoresApi_getPulsadores</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amyapp__leds_8h_html"><div class="ttname"><a href="myapp__leds_8h.html">myapp_leds.h</a></div><div class="ttdoc">Esta API se encarga del manejo de leds.</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a3003198a027c5c5f0b7f8333c14a17d8"><div class="ttname"><a href="myapp__pulsadores_8h.html#a3003198a027c5c5f0b7f8333c14a17d8">gpio_read_func_t</a></div><div class="ttdeci">bool(* gpio_read_func_t)()</div><div class="ttdoc">Tipo de dato de función que lee un gpio y retorna un bool.</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:52</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a358a8338155c0e143ea497c1df15a35b"><div class="ttname"><a href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35b">estado_mde_pulsador_t</a></div><div class="ttdeci">estado_mde_pulsador_t</div><div class="ttdoc">Estados de la MdE de pulsadores.</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:43</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635"><div class="ttname"><a href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635">ESTABLE_ALTO</a></div><div class="ttdeci">@ ESTABLE_ALTO</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:45</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6"><div class="ttname"><a href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6">CHEQUEANDO_TRANSICION</a></div><div class="ttdeci">@ CHEQUEANDO_TRANSICION</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:46</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1"><div class="ttname"><a href="myapp__pulsadores_8h.html#a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1">ESTABLE_BAJO</a></div><div class="ttdeci">@ ESTABLE_BAJO</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:44</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a4f4a3f361c24763d79c25a68f43d2bc1"><div class="ttname"><a href="myapp__pulsadores_8h.html#a4f4a3f361c24763d79c25a68f43d2bc1">pulsadoresApi_getPulsadores</a></div><div class="ttdeci">estado_pulsadores_t pulsadoresApi_getPulsadores()</div><div class="ttdoc">: Retorna el valor de los pulsadores sin rebote ni glitches</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.cpp:152</div></div>
+<div class="ttc" id="amyapp__pulsadores_8h_html_a6f8e64f6ba333ce2c2d83bdb7f6619cf"><div class="ttname"><a href="myapp__pulsadores_8h.html#a6f8e64f6ba333ce2c2d83bdb7f6619cf">pulsadoresApi_init</a></div><div class="ttdeci">void pulsadoresApi_init()</div><div class="ttdoc">: Inicializa a los GPIO de los pulsadores</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.cpp:139</div></div>
+<div class="ttc" id="astructarg__mde__pulsadores__t_html"><div class="ttname"><a href="structarg__mde__pulsadores__t.html">arg_mde_pulsadores_t</a></div><div class="ttdoc">Almacena las variables necesarias para la mde de pulsadores que elimina rebote y glitches.</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:70</div></div>
+<div class="ttc" id="astructarg__mde__pulsadores__t_html_aea9eaa591acab97da5d1e9d62aa3cc54"><div class="ttname"><a href="structarg__mde__pulsadores__t.html#aea9eaa591acab97da5d1e9d62aa3cc54">arg_mde_pulsadores_t::mem_pulsador</a></div><div class="ttdeci">bool mem_pulsador</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:72</div></div>
+<div class="ttc" id="astructarg__mde__pulsadores__t_html_aedfddf58016a48dede6a6002ff7414ec"><div class="ttname"><a href="structarg__mde__pulsadores__t.html#aedfddf58016a48dede6a6002ff7414ec">arg_mde_pulsadores_t::estado</a></div><div class="ttdeci">estado_mde_pulsador_t estado</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:71</div></div>
+<div class="ttc" id="astructestado__pulsadores__t_html"><div class="ttname"><a href="structestado__pulsadores__t.html">estado_pulsadores_t</a></div><div class="ttdoc">Almacena los estados de los pulsadores.</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:61</div></div>
+<div class="ttc" id="astructestado__pulsadores__t_html_abaf9ed197759d781eafc794f995b8eeb"><div class="ttname"><a href="structestado__pulsadores__t.html#abaf9ed197759d781eafc794f995b8eeb">estado_pulsadores_t::pulsador_red</a></div><div class="ttdeci">bool pulsador_red</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:62</div></div>
+<div class="ttc" id="astructestado__pulsadores__t_html_acee48336d8ac7ab06dfc8af1a4cfdf29"><div class="ttname"><a href="structestado__pulsadores__t.html#acee48336d8ac7ab06dfc8af1a4cfdf29">estado_pulsadores_t::pulsador_green</a></div><div class="ttdeci">bool pulsador_green</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:63</div></div>
+<div class="ttc" id="astructestado__pulsadores__t_html_aed729490f986f044deeeb078a2cbf4b3"><div class="ttname"><a href="structestado__pulsadores__t.html#aed729490f986f044deeeb078a2cbf4b3">estado_pulsadores_t::pulsador_blue</a></div><div class="ttdeci">bool pulsador_blue</div><div class="ttdef"><b>Definition</b> myapp_pulsadores.h:64</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

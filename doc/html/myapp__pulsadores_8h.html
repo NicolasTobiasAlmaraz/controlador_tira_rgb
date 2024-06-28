@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controlador Tira Leds RGB: Referencia del archivo myapp_pulsadores.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Controlador Tira Leds RGB<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Controlador Leds RGB con UART y pulsadores</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#define-members">defines</a> &#124;
+<a href="#typedef-members">typedefs</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo myapp_pulsadores.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>API de pulsadores.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="myapp__leds_8h_source.html">myapp_leds.h</a>&quot;</code><br />
+</div>
+<p><a href="myapp__pulsadores_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structestado__pulsadores__t.html">estado_pulsadores_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Almacena los estados de los pulsadores.  <a href="structestado__pulsadores__t.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarg__mde__pulsadores__t.html">arg_mde_pulsadores_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Almacena las variables necesarias para la mde de pulsadores que elimina rebote y glitches.  <a href="structarg__mde__pulsadores__t.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a1ec348fa7f748ad6042a02285f34a711" id="r_a1ec348fa7f748ad6042a02285f34a711"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec348fa7f748ad6042a02285f34a711">TIEMPO_ANTIRREBOTE_MS</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a1ec348fa7f748ad6042a02285f34a711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cc6e57c8b2548619151375546625f4" id="r_ad5cc6e57c8b2548619151375546625f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5cc6e57c8b2548619151375546625f4">GPIO_PULSADOR_RED</a>&#160;&#160;&#160;D5</td></tr>
+<tr class="separator:ad5cc6e57c8b2548619151375546625f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8406b9f3fe63595ff47c3dc0774b9ae7" id="r_a8406b9f3fe63595ff47c3dc0774b9ae7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8406b9f3fe63595ff47c3dc0774b9ae7">GPIO_PULSADOR_GREEN</a>&#160;&#160;&#160;D6</td></tr>
+<tr class="separator:a8406b9f3fe63595ff47c3dc0774b9ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e9681a19062dc49972291e710a1444" id="r_a29e9681a19062dc49972291e710a1444"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29e9681a19062dc49972291e710a1444">GPIO_PULSADOR_BLUE</a>&#160;&#160;&#160;D7</td></tr>
+<tr class="separator:a29e9681a19062dc49972291e710a1444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9449bece63b6fad66171b05bb696bf91" id="r_a9449bece63b6fad66171b05bb696bf91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9449bece63b6fad66171b05bb696bf91">RED_RESISTOR_MODE</a>&#160;&#160;&#160;PullDown</td></tr>
+<tr class="separator:a9449bece63b6fad66171b05bb696bf91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14c2f34dde7b1a244e44a26657ed293" id="r_aa14c2f34dde7b1a244e44a26657ed293"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa14c2f34dde7b1a244e44a26657ed293">GREEN_RESISTOR_MODE</a>&#160;&#160;&#160;PullDown</td></tr>
+<tr class="separator:aa14c2f34dde7b1a244e44a26657ed293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903420ba43f11625de19991d5e4cc4ec" id="r_a903420ba43f11625de19991d5e4cc4ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a903420ba43f11625de19991d5e4cc4ec">BLUE_RESISTOR_MODE</a>&#160;&#160;&#160;PullDown</td></tr>
+<tr class="separator:a903420ba43f11625de19991d5e4cc4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a3003198a027c5c5f0b7f8333c14a17d8" id="r_a3003198a027c5c5f0b7f8333c14a17d8"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3003198a027c5c5f0b7f8333c14a17d8">gpio_read_func_t</a>) ()</td></tr>
+<tr class="memdesc:a3003198a027c5c5f0b7f8333c14a17d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de dato de función que lee un gpio y retorna un bool.  <br /></td></tr>
+<tr class="separator:a3003198a027c5c5f0b7f8333c14a17d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a358a8338155c0e143ea497c1df15a35b" id="r_a358a8338155c0e143ea497c1df15a35b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358a8338155c0e143ea497c1df15a35b">estado_mde_pulsador_t</a> { <a class="el" href="#a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1">ESTABLE_BAJO</a> =0
+, <a class="el" href="#a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635">ESTABLE_ALTO</a>
+, <a class="el" href="#a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6">CHEQUEANDO_TRANSICION</a>
+ }</td></tr>
+<tr class="memdesc:a358a8338155c0e143ea497c1df15a35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estados de la MdE de pulsadores.  <a href="#a358a8338155c0e143ea497c1df15a35b">Más...</a><br /></td></tr>
+<tr class="separator:a358a8338155c0e143ea497c1df15a35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a6f8e64f6ba333ce2c2d83bdb7f6619cf" id="r_a6f8e64f6ba333ce2c2d83bdb7f6619cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f8e64f6ba333ce2c2d83bdb7f6619cf">pulsadoresApi_init</a> ()</td></tr>
+<tr class="memdesc:a6f8e64f6ba333ce2c2d83bdb7f6619cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Inicializa a los GPIO de los pulsadores  <br /></td></tr>
+<tr class="separator:a6f8e64f6ba333ce2c2d83bdb7f6619cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4a3f361c24763d79c25a68f43d2bc1" id="r_a4f4a3f361c24763d79c25a68f43d2bc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structestado__pulsadores__t.html">estado_pulsadores_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f4a3f361c24763d79c25a68f43d2bc1">pulsadoresApi_getPulsadores</a> ()</td></tr>
+<tr class="memdesc:a4f4a3f361c24763d79c25a68f43d2bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Retorna el valor de los pulsadores sin rebote ni glitches  <br /></td></tr>
+<tr class="separator:a4f4a3f361c24763d79c25a68f43d2bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>API de pulsadores. </p>
+<dl class="section author"><dt>Autor</dt><dd>Nicolás Almaraz </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>rev 1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>28/06/2024</dd></dl>
+<p>Esta API se encarga de leer los tres pulsadores eliminando los rebotes y glitches de cada uno de ellos. Para ello cuenta con una función de "lectura validada": <a class="el" href="structestado__pulsadores__t.html" title="Almacena los estados de los pulsadores.">estado_pulsadores_t</a> <a class="el" href="#a4f4a3f361c24763d79c25a68f43d2bc1" title=": Retorna el valor de los pulsadores sin rebote ni glitches">pulsadoresApi_getPulsadores()</a>;</p>
+<p>Cabe destacar que por hardware los pulsadores en estado IDLE hacen que la placa reciba 0V y cuando son presionados 3.3V </p>
+</div><h2 class="groupheader">Documentación de «define»</h2>
+<a id="a903420ba43f11625de19991d5e4cc4ec" name="a903420ba43f11625de19991d5e4cc4ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903420ba43f11625de19991d5e4cc4ec">&#9670;&#160;</a></span>BLUE_RESISTOR_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLUE_RESISTOR_MODE&#160;&#160;&#160;PullDown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29e9681a19062dc49972291e710a1444" name="a29e9681a19062dc49972291e710a1444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e9681a19062dc49972291e710a1444">&#9670;&#160;</a></span>GPIO_PULSADOR_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_PULSADOR_BLUE&#160;&#160;&#160;D7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8406b9f3fe63595ff47c3dc0774b9ae7" name="a8406b9f3fe63595ff47c3dc0774b9ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8406b9f3fe63595ff47c3dc0774b9ae7">&#9670;&#160;</a></span>GPIO_PULSADOR_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_PULSADOR_GREEN&#160;&#160;&#160;D6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5cc6e57c8b2548619151375546625f4" name="ad5cc6e57c8b2548619151375546625f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cc6e57c8b2548619151375546625f4">&#9670;&#160;</a></span>GPIO_PULSADOR_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_PULSADOR_RED&#160;&#160;&#160;D5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa14c2f34dde7b1a244e44a26657ed293" name="aa14c2f34dde7b1a244e44a26657ed293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa14c2f34dde7b1a244e44a26657ed293">&#9670;&#160;</a></span>GREEN_RESISTOR_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GREEN_RESISTOR_MODE&#160;&#160;&#160;PullDown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9449bece63b6fad66171b05bb696bf91" name="a9449bece63b6fad66171b05bb696bf91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9449bece63b6fad66171b05bb696bf91">&#9670;&#160;</a></span>RED_RESISTOR_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RED_RESISTOR_MODE&#160;&#160;&#160;PullDown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ec348fa7f748ad6042a02285f34a711" name="a1ec348fa7f748ad6042a02285f34a711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec348fa7f748ad6042a02285f34a711">&#9670;&#160;</a></span>TIEMPO_ANTIRREBOTE_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIEMPO_ANTIRREBOTE_MS&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de «typedef»</h2>
+<a id="a3003198a027c5c5f0b7f8333c14a17d8" name="a3003198a027c5c5f0b7f8333c14a17d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3003198a027c5c5f0b7f8333c14a17d8">&#9670;&#160;</a></span>gpio_read_func_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool(* gpio_read_func_t) ()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de dato de función que lee un gpio y retorna un bool. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de enumeraciones</h2>
+<a id="a358a8338155c0e143ea497c1df15a35b" name="a358a8338155c0e143ea497c1df15a35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358a8338155c0e143ea497c1df15a35b">&#9670;&#160;</a></span>estado_mde_pulsador_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a358a8338155c0e143ea497c1df15a35b">estado_mde_pulsador_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estados de la MdE de pulsadores. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1" name="a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1"></a>ESTABLE_BAJO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635" name="a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635"></a>ESTABLE_ALTO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6" name="a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6"></a>CHEQUEANDO_TRANSICION&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a4f4a3f361c24763d79c25a68f43d2bc1" name="a4f4a3f361c24763d79c25a68f43d2bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4a3f361c24763d79c25a68f43d2bc1">&#9670;&#160;</a></span>pulsadoresApi_getPulsadores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structestado__pulsadores__t.html">estado_pulsadores_t</a> pulsadoresApi_getPulsadores </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>: Retorna el valor de los pulsadores sin rebote ni glitches </p>
+<dl class="section warning"><dt>Atención</dt><dd>Bloquea TIEMPO_ANTIRREBOTE_MS ms para verificar transicion </dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"></td><td>Valor de los pulsadores sin rebote ni glitches </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f8e64f6ba333ce2c2d83bdb7f6619cf" name="a6f8e64f6ba333ce2c2d83bdb7f6619cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8e64f6ba333ce2c2d83bdb7f6619cf">&#9670;&#160;</a></span>pulsadoresApi_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pulsadoresApi_init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>: Inicializa a los GPIO de los pulsadores </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

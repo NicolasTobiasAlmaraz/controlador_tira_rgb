@@ -1,0 +1,121 @@
+\doxysection{Referencia del archivo myapp\+\_\+leds.\+h}
+\hypertarget{myapp__leds_8h}{}\label{myapp__leds_8h}\index{myapp\_leds.h@{myapp\_leds.h}}
+
+
+Esta API se encarga del manejo de leds.  
+
+
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \+: Contiene un color rgb \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{myapp__leds_8h_a1fd0cf674bbdfc6697e383c9ff58ba92}{GPIO\+\_\+\+LED\+\_\+\+RED}}~D2
+\begin{DoxyCompactList}\small\item\em GPIO del LED rojo. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__leds_8h_ad367d31df0a2c9cc31261352ff319be4}{GPIO\+\_\+\+LED\+\_\+\+GREEN}}~D3
+\begin{DoxyCompactList}\small\item\em GPIO del LED verde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{myapp__leds_8h_a1b68be6e2122ae14a5c7ab39f0680c2b}{GPIO\+\_\+\+LED\+\_\+\+BLUE}}~D4
+\begin{DoxyCompactList}\small\item\em GPIO del LED azul. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{myapp__leds_8h_af782e20b0a5960681064153837a6f3e1}{leds\+Api\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa GPIOs en color blanco. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} \mbox{\hyperlink{myapp__leds_8h_ad65669ebe956830a8ac1c8a87a663d6c}{leds\+Api\+\_\+get\+Leds\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la configuracion actual de los leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{myapp__leds_8h_afbed96dabdc0f6c1ed4b3c192fceb073}{leds\+Api\+\_\+set\+Leds}} (\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Setea un color rgb en los leds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Esta API se encarga del manejo de leds. 
+
+Esta API se encarga del manejo de leds. Para eso cuenta con los métodos set de cada uno de los leds\+: void leds\+Api\+\_\+prender\+Rojo(); void leds\+Api\+\_\+prender\+Verde(); void leds\+Api\+\_\+prender\+Azul();
+
+Y también tiene una función para cargar una configuración void leds\+Api\+\_\+set\+Leds(rgb\+\_\+leds\+\_\+t);
+
+Por otro lado, cuenta con una función para obtener el estado de los leds rgb\+\_\+leds\+\_\+t \doxylink{myapp__leds_8h_ad65669ebe956830a8ac1c8a87a663d6c}{leds\+Api\+\_\+get\+Leds\+Config()};
+
+Por hardware los Leds son activos por 0v 
+
+\doxysubsection{Documentación de «define»}
+\Hypertarget{myapp__leds_8h_a1b68be6e2122ae14a5c7ab39f0680c2b}\index{myapp\_leds.h@{myapp\_leds.h}!GPIO\_LED\_BLUE@{GPIO\_LED\_BLUE}}
+\index{GPIO\_LED\_BLUE@{GPIO\_LED\_BLUE}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_LED\_BLUE}{GPIO\_LED\_BLUE}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_a1b68be6e2122ae14a5c7ab39f0680c2b} 
+\#define GPIO\+\_\+\+LED\+\_\+\+BLUE~D4}
+
+
+
+GPIO del LED azul. 
+
+\Hypertarget{myapp__leds_8h_ad367d31df0a2c9cc31261352ff319be4}\index{myapp\_leds.h@{myapp\_leds.h}!GPIO\_LED\_GREEN@{GPIO\_LED\_GREEN}}
+\index{GPIO\_LED\_GREEN@{GPIO\_LED\_GREEN}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_LED\_GREEN}{GPIO\_LED\_GREEN}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_ad367d31df0a2c9cc31261352ff319be4} 
+\#define GPIO\+\_\+\+LED\+\_\+\+GREEN~D3}
+
+
+
+GPIO del LED verde. 
+
+\Hypertarget{myapp__leds_8h_a1fd0cf674bbdfc6697e383c9ff58ba92}\index{myapp\_leds.h@{myapp\_leds.h}!GPIO\_LED\_RED@{GPIO\_LED\_RED}}
+\index{GPIO\_LED\_RED@{GPIO\_LED\_RED}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_LED\_RED}{GPIO\_LED\_RED}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_a1fd0cf674bbdfc6697e383c9ff58ba92} 
+\#define GPIO\+\_\+\+LED\+\_\+\+RED~D2}
+
+
+
+GPIO del LED rojo. 
+
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{myapp__leds_8h_ad65669ebe956830a8ac1c8a87a663d6c}\index{myapp\_leds.h@{myapp\_leds.h}!ledsApi\_getLedsConfig@{ledsApi\_getLedsConfig}}
+\index{ledsApi\_getLedsConfig@{ledsApi\_getLedsConfig}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_getLedsConfig()}{ledsApi\_getLedsConfig()}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_ad65669ebe956830a8ac1c8a87a663d6c} 
+\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}} leds\+Api\+\_\+get\+Leds\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retorna la configuracion actual de los leds. 
+
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em Configuracion} & actual de los leds\\
+\hline
+{\em configuracion} & actual de los leds \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{myapp__leds_8h_af782e20b0a5960681064153837a6f3e1}\index{myapp\_leds.h@{myapp\_leds.h}!ledsApi\_init@{ledsApi\_init}}
+\index{ledsApi\_init@{ledsApi\_init}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_init()}{ledsApi\_init()}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_af782e20b0a5960681064153837a6f3e1} 
+void leds\+Api\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa GPIOs en color blanco. 
+
+\Hypertarget{myapp__leds_8h_afbed96dabdc0f6c1ed4b3c192fceb073}\index{myapp\_leds.h@{myapp\_leds.h}!ledsApi\_setLeds@{ledsApi\_setLeds}}
+\index{ledsApi\_setLeds@{ledsApi\_setLeds}!myapp\_leds.h@{myapp\_leds.h}}
+\doxysubsubsection{\texorpdfstring{ledsApi\_setLeds()}{ledsApi\_setLeds()}}
+{\footnotesize\ttfamily \label{myapp__leds_8h_afbed96dabdc0f6c1ed4b3c192fceb073} 
+void leds\+Api\+\_\+set\+Leds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrgb__color__t}{rgb\+\_\+color\+\_\+t}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Setea un color rgb en los leds. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em color} & Color a setear \\
+\hline
+\end{DoxyParams}

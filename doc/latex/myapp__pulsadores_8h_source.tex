@@ -1,0 +1,63 @@
+\doxysection{myapp\+\_\+pulsadores.\+h}
+\hypertarget{myapp__pulsadores_8h_source}{}\label{myapp__pulsadores_8h_source}\mbox{\hyperlink{myapp__pulsadores_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ MYAPP\_PULSADORES\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MYAPP\_PULSADORES\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ ====================\ Dependencias}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}mbed.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{myapp__leds_8h}{myapp\_leds.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Defines\ API\ Pulsadores}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ TIEMPO\_ANTIRREBOTE\_MS\ 50\ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ Tiempo\ de\ seguridad\ antirrebote\ y\ antiglithces}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ GPIO\_PULSADOR\_RED\ D5\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ GPIO\ pulsador\ que\ controla\ led\ R}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ GPIO\_PULSADOR\_GREEN\ D6\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ GPIO\ pulsador\ que\ controla\ led\ G}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ GPIO\_PULSADOR\_BLUE\ D7\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ GPIO\ pulsador\ que\ controla\ led\ B}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ RED\_RESISTOR\_MODE\ PullDown\ \ \ \ \ \ }\textcolor{comment}{//<\ Uso\ resistencia\ de\ Pull\ Down\ Interna\ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ GREEN\_RESISTOR\_MODE\ PullDown\ \ \ \ }\textcolor{comment}{//<\ Uso\ resistencia\ de\ Pull\ Down\ Interna\ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BLUE\_RESISTOR\_MODE\ PullDown\ \ \ \ \ }\textcolor{comment}{//<\ Uso\ resistencia\ de\ Pull\ Down\ Interna\ }}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ Tipos\ de\ datos\ API\ Pulsadores}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35bae4b5801be00b878503f5212d5fe5f0b1}{ESTABLE\_BAJO}}=0,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba29ebac6b665703fc1f8a8c200d112635}{ESTABLE\_ALTO}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35ba57190be13af01644a569658be26614c6}{CHEQUEANDO\_TRANSICION}},}
+\DoxyCodeLine{00047\ \}\mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b}{estado\_mde\_pulsador\_t}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ bool\ (*\mbox{\hyperlink{myapp__pulsadores_8h_a3003198a027c5c5f0b7f8333c14a17d8}{gpio\_read\_func\_t}})();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ Estructuras\ de\ la\ API\ Pulsaores}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structestado__pulsadores__t_abaf9ed197759d781eafc794f995b8eeb}{pulsador\_red}};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structestado__pulsadores__t_acee48336d8ac7ab06dfc8af1a4cfdf29}{pulsador\_green}};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structestado__pulsadores__t_aed729490f986f044deeeb078a2cbf4b3}{pulsador\_blue}};}
+\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{structestado__pulsadores__t}{estado\_pulsadores\_t}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{myapp__pulsadores_8h_a358a8338155c0e143ea497c1df15a35b}{estado\_mde\_pulsador\_t}}\ \mbox{\hyperlink{structarg__mde__pulsadores__t_aedfddf58016a48dede6a6002ff7414ec}{estado}};\ \textcolor{comment}{/*<\ Estado\ de\ la\ mde*/}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structarg__mde__pulsadores__t_aea9eaa591acab97da5d1e9d62aa3cc54}{mem\_pulsador}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*<\ Ultimo\ estado\ estable\ del\ pulsador*/}}
+\DoxyCodeLine{00073\ \}\ \mbox{\hyperlink{structarg__mde__pulsadores__t}{arg\_mde\_pulsadores\_t}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ Funciones\ Públicas\ API\ Pulsadores}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//====================================================================\ }}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{myapp__pulsadores_8h_a6f8e64f6ba333ce2c2d83bdb7f6619cf}{pulsadoresApi\_init}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \mbox{\hyperlink{structestado__pulsadores__t}{estado\_pulsadores\_t}}\ \mbox{\hyperlink{myapp__pulsadores_8h_a4f4a3f361c24763d79c25a68f43d2bc1}{pulsadoresApi\_getPulsadores}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

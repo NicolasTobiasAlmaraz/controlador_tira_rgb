@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controlador Tira Leds RGB: Archivo de código fuente myapp_uart.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Controlador Tira Leds RGB<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Controlador Leds RGB con UART y pulsadores</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">myapp_uart.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="myapp__uart_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef MYAPP_UART_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MYAPP_UART_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// ==================== Dependencias</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;mbed.h&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;UnbufferedSerial.h&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="myapp__leds_8h.html">myapp_leds.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Defines UART</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#a7c863ba4b7bef1cecda37762facd4d07">   31</a></span><span class="preprocessor">#define GPIO_UART_TX USBTX                  </span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#ae428b840bfb6cce0c8efa29f090fcced">   32</a></span><span class="preprocessor">#define GPIO_UART_RX USBRX                  </span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#a2c7ed0283bd6f2f9d791860d6254ef4f">   33</a></span><span class="preprocessor">#define UART_BAUDRATE 115200                </span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#a3c8188748a929d23162ed997a51ee41f">   34</a></span><span class="preprocessor">#define UART_DATA_SIZE 8                    </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#ab932da02c44d07c0f8e8eb3d7b4f058e">   35</a></span><span class="preprocessor">#define UART_SERIAL_BASE SerialBase::None   </span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#ab2dcf845824ee9eebc696a0de1f31688">   36</a></span><span class="preprocessor">#define UART_STOP_BIT 1                     </span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Tipos de datos UART</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196f">   45</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1">   46</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1">NO_UART_MSG</a>=0,  </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64">   47</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64">SET_LEDS</a>,       </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054">   48</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054">GET_CONFIG</a>,     </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <a class="code hl_enumeration" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196f">request_uart_t</a>;</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8">   54</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0">   55</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0">ESTADO_IDLE</a>=0,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9">   56</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9">ESTADO_NUM_R</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962">   57</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962">ESTADO_NUM_G</a>,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4">   58</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4">ESTADO_NUM_B</a>,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d">   59</a></span>    <a class="code hl_enumvalue" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d">ESTADO_CHECK_OK</a>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <a class="code hl_enumeration" href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8">estado_mde_uart_t</a>;</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// Estructuras de la API UART</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structmsg__uart__t.html">   69</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structmsg__uart__t.html#a0c167fbeab928290971d5b5e510a7658">   70</a></span>    <a class="code hl_enumeration" href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196f">request_uart_t</a> <a class="code hl_variable" href="structmsg__uart__t.html#a0c167fbeab928290971d5b5e510a7658">type</a>;    </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structmsg__uart__t.html#a58e179cf09a28b9ef2f87da06ec028a9">   71</a></span>    <a class="code hl_struct" href="structrgb__color__t.html">rgb_color_t</a> <a class="code hl_variable" href="structmsg__uart__t.html#a58e179cf09a28b9ef2f87da06ec028a9">data</a>;       </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <a class="code hl_struct" href="structmsg__uart__t.html">msg_uart_t</a>;</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// Funciones Públicas</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__uart_8h.html#af43f07d51887017f947ca77b7eeb3708">uartApi_init</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><a class="code hl_struct" href="structmsg__uart__t.html">msg_uart_t</a> <a class="code hl_function" href="myapp__uart_8h.html#a230f18443a90b8403d1d72418038abd5">uartApi_mde_recepcion</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__uart_8h.html#af1a56144013f17dabf142e484d86d78a">uartApi_sendConfig</a>(<a class="code hl_struct" href="structrgb__color__t.html">rgb_color_t</a> color);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__uart_8h.html#a6353a4b4872dd3bb31f174807b9f1dc3">uartApi_sendUart</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amyapp__leds_8h_html"><div class="ttname"><a href="myapp__leds_8h.html">myapp_leds.h</a></div><div class="ttdoc">Esta API se encarga del manejo de leds.</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_a230f18443a90b8403d1d72418038abd5"><div class="ttname"><a href="myapp__uart_8h.html#a230f18443a90b8403d1d72418038abd5">uartApi_mde_recepcion</a></div><div class="ttdeci">msg_uart_t uartApi_mde_recepcion()</div><div class="ttdoc">Interpreta los mensajes recibidos por UART.</div><div class="ttdef"><b>Definition</b> myapp_uart.cpp:83</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_a6353a4b4872dd3bb31f174807b9f1dc3"><div class="ttname"><a href="myapp__uart_8h.html#a6353a4b4872dd3bb31f174807b9f1dc3">uartApi_sendUart</a></div><div class="ttdeci">void uartApi_sendUart(const char *str)</div><div class="ttdoc">Envia un mensaje por Uart.</div><div class="ttdef"><b>Definition</b> myapp_uart.cpp:160</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af1a56144013f17dabf142e484d86d78a"><div class="ttname"><a href="myapp__uart_8h.html#af1a56144013f17dabf142e484d86d78a">uartApi_sendConfig</a></div><div class="ttdeci">void uartApi_sendConfig(rgb_color_t color)</div><div class="ttdoc">Envia la configuracion actual por uart.</div><div class="ttdef"><b>Definition</b> myapp_uart.cpp:150</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af43f07d51887017f947ca77b7eeb3708"><div class="ttname"><a href="myapp__uart_8h.html#af43f07d51887017f947ca77b7eeb3708">uartApi_init</a></div><div class="ttdeci">void uartApi_init()</div><div class="ttdoc">Inicializa la UART con la configuración de los &quot;defines&quot; de la API.</div><div class="ttdef"><b>Definition</b> myapp_uart.cpp:71</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8">estado_mde_uart_t</a></div><div class="ttdeci">estado_mde_uart_t</div><div class="ttdoc">Estados mde recepcion UART que interpretan solicitud.</div><div class="ttdef"><b>Definition</b> myapp_uart.h:54</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a2a5b0ec7e650c6d3a2978862eca866a9">ESTADO_NUM_R</a></div><div class="ttdeci">@ ESTADO_NUM_R</div><div class="ttdef"><b>Definition</b> myapp_uart.h:56</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8a93bc06fb301e20bf4d7526df7958425d">ESTADO_CHECK_OK</a></div><div class="ttdeci">@ ESTADO_CHECK_OK</div><div class="ttdef"><b>Definition</b> myapp_uart.h:59</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8aa53f40a4f19d8ebd2918c08ac05611b4">ESTADO_NUM_B</a></div><div class="ttdeci">@ ESTADO_NUM_B</div><div class="ttdef"><b>Definition</b> myapp_uart.h:58</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8accfe8f8d74c06750b82e653b4a4f2962">ESTADO_NUM_G</a></div><div class="ttdeci">@ ESTADO_NUM_G</div><div class="ttdef"><b>Definition</b> myapp_uart.h:57</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0"><div class="ttname"><a href="myapp__uart_8h.html#af6b80d02584e653608952ed844b736c8ae5c21ebaed54ee033ae40c40a4487ca0">ESTADO_IDLE</a></div><div class="ttdeci">@ ESTADO_IDLE</div><div class="ttdef"><b>Definition</b> myapp_uart.h:55</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af8d05eb2f4ce962b6493557b4f49196f"><div class="ttname"><a href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196f">request_uart_t</a></div><div class="ttdeci">request_uart_t</div><div class="ttdoc">Posibles tipos de mensajes que pueden enviar por UART.</div><div class="ttdef"><b>Definition</b> myapp_uart.h:45</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054"><div class="ttname"><a href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa151e9cc2a1f78680c582dc0cf2878054">GET_CONFIG</a></div><div class="ttdeci">@ GET_CONFIG</div><div class="ttdoc">Pedido de configuracion.</div><div class="ttdef"><b>Definition</b> myapp_uart.h:48</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64"><div class="ttname"><a href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5573ab0076adae63fb348033be8a2d64">SET_LEDS</a></div><div class="ttdeci">@ SET_LEDS</div><div class="ttdoc">Hay que modificar los leds.</div><div class="ttdef"><b>Definition</b> myapp_uart.h:47</div></div>
+<div class="ttc" id="amyapp__uart_8h_html_af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1"><div class="ttname"><a href="myapp__uart_8h.html#af8d05eb2f4ce962b6493557b4f49196fa5b7f7ad83eceaec79e43d6f0460e56f1">NO_UART_MSG</a></div><div class="ttdeci">@ NO_UART_MSG</div><div class="ttdoc">No hay ningún mensaje.</div><div class="ttdef"><b>Definition</b> myapp_uart.h:46</div></div>
+<div class="ttc" id="astructmsg__uart__t_html"><div class="ttname"><a href="structmsg__uart__t.html">msg_uart_t</a></div><div class="ttdoc">: Mensaje que se recibe por UART</div><div class="ttdef"><b>Definition</b> myapp_uart.h:69</div></div>
+<div class="ttc" id="astructmsg__uart__t_html_a0c167fbeab928290971d5b5e510a7658"><div class="ttname"><a href="structmsg__uart__t.html#a0c167fbeab928290971d5b5e510a7658">msg_uart_t::type</a></div><div class="ttdeci">request_uart_t type</div><div class="ttdef"><b>Definition</b> myapp_uart.h:70</div></div>
+<div class="ttc" id="astructmsg__uart__t_html_a58e179cf09a28b9ef2f87da06ec028a9"><div class="ttname"><a href="structmsg__uart__t.html#a58e179cf09a28b9ef2f87da06ec028a9">msg_uart_t::data</a></div><div class="ttdeci">rgb_color_t data</div><div class="ttdef"><b>Definition</b> myapp_uart.h:71</div></div>
+<div class="ttc" id="astructrgb__color__t_html"><div class="ttname"><a href="structrgb__color__t.html">rgb_color_t</a></div><div class="ttdoc">: Contiene un color rgb</div><div class="ttdef"><b>Definition</b> myapp_leds.h:42</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

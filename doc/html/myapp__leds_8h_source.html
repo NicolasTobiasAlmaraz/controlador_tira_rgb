@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Controlador Tira Leds RGB: Archivo de código fuente myapp_leds.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Controlador Tira Leds RGB<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Controlador Leds RGB con UART y pulsadores</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">myapp_leds.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="myapp__leds_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef MYAPP_LEDS_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define MYAPP_LEDS_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// ==================== Dependencias</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;mbed.h&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Defines de la API LEDs</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="myapp__leds_8h.html#a1fd0cf674bbdfc6697e383c9ff58ba92">   30</a></span><span class="preprocessor">#define GPIO_LED_RED D2     </span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="myapp__leds_8h.html#ad367d31df0a2c9cc31261352ff319be4">   31</a></span><span class="preprocessor">#define GPIO_LED_GREEN D3   </span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="myapp__leds_8h.html#a1b68be6e2122ae14a5c7ab39f0680c2b">   32</a></span><span class="preprocessor">#define GPIO_LED_BLUE D4    </span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// Estructuras de la API LEDs</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//TODO: Le puse uint8_t para poder escalarse en el futuro a un PWM almacenando el duty de cada color</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structrgb__color__t.html">   42</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structrgb__color__t.html#ad47d918910aaa51c73160ac85999d09c">   43</a></span>    uint8_t <a class="code hl_variable" href="structrgb__color__t.html#ad47d918910aaa51c73160ac85999d09c">red</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structrgb__color__t.html#a90d21fa503b626c00cdc8d94863d5877">   44</a></span>    uint8_t <a class="code hl_variable" href="structrgb__color__t.html#a90d21fa503b626c00cdc8d94863d5877">green</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrgb__color__t.html#a287b397e90d7b995c81ff54e741f96b2">   45</a></span>    uint8_t <a class="code hl_variable" href="structrgb__color__t.html#a287b397e90d7b995c81ff54e741f96b2">blue</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="structrgb__color__t.html">rgb_color_t</a>;</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//====================================================================</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// Funciones públicas de la API LEDs</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//==================================================================== </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__leds_8h.html#af782e20b0a5960681064153837a6f3e1">ledsApi_init</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><a class="code hl_struct" href="structrgb__color__t.html">rgb_color_t</a> <a class="code hl_function" href="myapp__leds_8h.html#ad65669ebe956830a8ac1c8a87a663d6c">ledsApi_getLedsConfig</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="myapp__leds_8h.html#afbed96dabdc0f6c1ed4b3c192fceb073">ledsApi_setLeds</a>(<a class="code hl_struct" href="structrgb__color__t.html">rgb_color_t</a> color);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amyapp__leds_8h_html_ad65669ebe956830a8ac1c8a87a663d6c"><div class="ttname"><a href="myapp__leds_8h.html#ad65669ebe956830a8ac1c8a87a663d6c">ledsApi_getLedsConfig</a></div><div class="ttdeci">rgb_color_t ledsApi_getLedsConfig()</div><div class="ttdoc">Retorna la configuracion actual de los leds.</div><div class="ttdef"><b>Definition</b> myapp_leds.cpp:125</div></div>
+<div class="ttc" id="amyapp__leds_8h_html_af782e20b0a5960681064153837a6f3e1"><div class="ttname"><a href="myapp__leds_8h.html#af782e20b0a5960681064153837a6f3e1">ledsApi_init</a></div><div class="ttdeci">void ledsApi_init()</div><div class="ttdoc">Inicializa GPIOs en color blanco.</div><div class="ttdef"><b>Definition</b> myapp_leds.cpp:132</div></div>
+<div class="ttc" id="amyapp__leds_8h_html_afbed96dabdc0f6c1ed4b3c192fceb073"><div class="ttname"><a href="myapp__leds_8h.html#afbed96dabdc0f6c1ed4b3c192fceb073">ledsApi_setLeds</a></div><div class="ttdeci">void ledsApi_setLeds(rgb_color_t color)</div><div class="ttdoc">Setea un color rgb en los leds.</div><div class="ttdef"><b>Definition</b> myapp_leds.cpp:101</div></div>
+<div class="ttc" id="astructrgb__color__t_html"><div class="ttname"><a href="structrgb__color__t.html">rgb_color_t</a></div><div class="ttdoc">: Contiene un color rgb</div><div class="ttdef"><b>Definition</b> myapp_leds.h:42</div></div>
+<div class="ttc" id="astructrgb__color__t_html_a287b397e90d7b995c81ff54e741f96b2"><div class="ttname"><a href="structrgb__color__t.html#a287b397e90d7b995c81ff54e741f96b2">rgb_color_t::blue</a></div><div class="ttdeci">uint8_t blue</div><div class="ttdef"><b>Definition</b> myapp_leds.h:45</div></div>
+<div class="ttc" id="astructrgb__color__t_html_a90d21fa503b626c00cdc8d94863d5877"><div class="ttname"><a href="structrgb__color__t.html#a90d21fa503b626c00cdc8d94863d5877">rgb_color_t::green</a></div><div class="ttdeci">uint8_t green</div><div class="ttdef"><b>Definition</b> myapp_leds.h:44</div></div>
+<div class="ttc" id="astructrgb__color__t_html_ad47d918910aaa51c73160ac85999d09c"><div class="ttname"><a href="structrgb__color__t.html#ad47d918910aaa51c73160ac85999d09c">rgb_color_t::red</a></div><div class="ttdeci">uint8_t red</div><div class="ttdef"><b>Definition</b> myapp_leds.h:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
