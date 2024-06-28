@@ -19,13 +19,16 @@
 #ifndef MYAPP_LEDS_H
 #define MYAPP_LEDS_H
 
+//====================================================================
 // ==================== Dependencias
+//====================================================================
 
 #include "mbed.h"
 #include <stdint.h>
 
 //====================================================================
 // Defines de la API LEDs
+//====================================================================
 
 #define GPIO_LED_RED D2     ///< GPIO del LED rojo
 #define GPIO_LED_GREEN D3   ///< GPIO del LED verde
