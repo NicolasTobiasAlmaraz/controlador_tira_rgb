@@ -13,17 +13,17 @@ Profesores:
 /sources
 |-- main.cpp
 |-- uart
-|   |-- myapp_uart.h
-|   |-- myapp_uart.c
+| |-- myapp_uart.h
+| |-- myapp_uart.c
 |-- pulsadores
-|   |-- myapp_pulsadores.h
-|   |-- myapp_pulsadores.c
+| |-- myapp_pulsadores.h
+| |-- myapp_pulsadores.c
 |-- leds
-|   |-- myapp_leds.h
-|   |-- myapp_leds.c
+| |-- myapp_leds.h
+| |-- myapp_leds.c
 |-- main_controller
-    |-- myapp_main_controller.h
-    |-- myapp_main_controller.c
+|-- myapp_main_controller.h
+|-- myapp_main_controller.c
 
 ## Descripcion
 En este trabajo presento un controlador de luces LED RGB que tiene una interfaz de usuario UART o mediante tres pulsadores.
