@@ -38,21 +38,23 @@ En mi cuarto tengo una lámpara casera que hice basándome en una vieja tira led
 
 #### Figura 1:
 ![image](https://github.com/NicolasTobiasAlmaraz/tp1/assets/128346566/2dd5ba07-9623-439f-9620-f8e874b56752)
-Tira led que utilizo como lámpara
 
+Tira led que utilizo como lámpara
 
 La tira LED está conectada de tal manera que la alimentación de 24V (figura 2) va conectada directamente a las entradas R, G y B mediante un conector plug (figura 3). En consecuencia por cómo están hechas las conexiones funciona como una tira LED de luz blanca únicamente (no tiene un controlador, está en modo “color fijo”):
 
 #### Figura 2:
 ![image](https://github.com/NicolasTobiasAlmaraz/tp1/assets/128346566/495da282-f0f5-47d2-a2f3-82cf2e8378de)
+
 Fuente 24V DC
 
 #### Figura 3:
 ![image](https://github.com/NicolasTobiasAlmaraz/tp1/assets/128346566/ed7f92ff-8842-4667-a142-fabd5e8682cc)
+
 Entrada de alimentación de la tira LED. Tal como entra la línea de 24V alimenta las entradas R, G y B de la tira -> Queda luz blanca
 
-
-Entonces para este trabajo práctico propongo hacer un bloque controlador que esté entre la alimentación y las líneas de control de los leds R, G y B (Figura 4). Este controlador va a permitir cambiar el color de cada led. El esquema de funcionamiento sería el siguiente: 
+#### Funcionamiento:
+Entonces para este trabajo práctico propongo hacer un bloque controlador que esté entre la alimentación y las líneas de control de los leds R, G y B (Figura 4). Este controlador va a permitir cambiar el color formado. El esquema de funcionamiento sería el siguiente: 
 
 
 #### Estado de reset:
