@@ -9,6 +9,9 @@ Nicolás Almaraz
 - Juan Manuel Reta
 - Eduardo Filomena
 
+## Video del Funcionamiento
+[![Título del Video](https://img.youtube.com/vi/WTMURiHmbko/0.jpg)](https://www.youtube.com/watch?v=WTMURiHmbko)
+
 ## Estructura de archivos fuente
 ```
 /sources
