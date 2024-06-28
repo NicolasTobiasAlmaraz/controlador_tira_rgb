@@ -71,9 +71,9 @@ La “S” representa set y “rgb” es un número binario de 3 bits. Esta pala
 Si se recibe por UART una “G” significa que desde la PC nos están pidiendo que indiquemos el estado de los leds. Por lo tanto, le tenemos que pedir a la API LEDS que nos indique cuál es su estado actual y este valor se lo re-enviaremos a la PC. Entonces respondemos “rgb” (palabra binaria de 3 bits).
 ### API PULSADORES:
 Se tienen 3 pulsadores para control manual:
-R: Cambia el estado del led rojo
-G: Cambia el estado del led verde
-B: Cambia el estado del led azul
+- R: Cambia el estado del led rojo
+- G: Cambia el estado del led verde
+- B: Cambia el estado del led azul
 
 Por ejemplo si tenía la configuración 010 y presiono el pulsador R, ahora voy a tener 110 Entonces esta API lee los pulsadores y le avisa a la API LEDS si tiene que modificar su estado de funcionamiento.
 
