@@ -1,8 +1,9 @@
 # Controlador de Tira LED RGB
 
 ## TP1 - Curso Sistemas Embebidos
-Alumno: Nicolás Almaraz
-Profesores: 
+### Alumno:
+Nicolás Almaraz
+### Profesores: 
 - Ariel Lutenberg
 - Segio Caprile
 - Juan Manuel Reta
