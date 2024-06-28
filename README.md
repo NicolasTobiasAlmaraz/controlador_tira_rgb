@@ -10,7 +10,8 @@ Profesores:
 - Eduardo Filomena
 
 ## Estructura de archivos fuente
-"/sources
+```
+/sources
 |-- main.cpp
 |-- uart
 | |-- myapp_uart.h
@@ -23,7 +24,8 @@ Profesores:
 | |-- myapp_leds.c
 |-- main_controller
 |-- myapp_main_controller.h
-|-- myapp_main_controller.c"
+|-- myapp_main_controller.c
+```
 
 ## Descripcion
 En este trabajo presento un controlador de luces LED RGB que tiene una interfaz de usuario UART o mediante tres pulsadores.
