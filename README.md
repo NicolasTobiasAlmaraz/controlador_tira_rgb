@@ -31,8 +31,7 @@ Nicolás Almaraz
 ```
 
 ## Documentación
-En la carpeta doc está la documentación generada con Doxygen del proyecto completo
-Para acceder a ella ir al archivo index.html
+En la carpeta "doc/html" está el archivo "index.html" que contiene la documentación generada con Doxygen del proyecto completo.
 
 ## Objetivo:
 Remodelar mí lámpara basada en una tira LED RGB.
